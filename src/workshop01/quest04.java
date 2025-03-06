@@ -2,11 +2,11 @@ package workshop01;
 
 import java.util.Scanner;
 
-public class Quest04 {
+public class quest04 {
     float first_side, second_side, third_side, semi_peri, area;
 
     public static void main(String[] args) {
-        Quest04 mainInstance = new Quest04();
+        quest04 mainInstance = new quest04();
         System.out.println("Area of triangle");
         System.out.println(" ");
         mainInstance.readSides();

@@ -2,11 +2,11 @@ package workshop01;
 
 import java.util.Scanner;
 
-public class Quest06 {
+public class quest06 {
     double length, area;
 
     public static void main(String[] args) {
-        Quest06 mainInstance = new Quest06();
+        quest06 mainInstance = new quest06();
         System.out.println("Area of square");
         System.out.println(" ");
         mainInstance.readSide();

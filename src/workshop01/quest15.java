@@ -1,9 +1,9 @@
 package workshop01;
 
-public class Quest15 {
+public class quest15 {
 
     public static void main(String[] args) {
-        Quest15 mainInstance = new Quest15();
+        quest15 mainInstance = new quest15();
         mainInstance.logicalAND();
         mainInstance.logicalOR();
         mainInstance.logicalNOT();

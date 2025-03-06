@@ -3,13 +3,13 @@ package workshop01;
 import java.math.BigInteger;
 import java.util.Scanner;
 
-public class Quest01 {
+public class quest01 {
     String name;
     int age;
     BigInteger number;
 
     public static void main(String[] args) {
-        Quest01 mainInstance = new Quest01();
+        quest01 mainInstance = new quest01();
         mainInstance.readInfo();
         System.out.println(" ");
         mainInstance.printInfo();

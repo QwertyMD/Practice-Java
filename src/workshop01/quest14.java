@@ -2,12 +2,12 @@ package workshop01;
 
 import java.util.Scanner;
 
-public class Quest14 {
+public class quest14 {
     float USD, rate;
     double convertedAmount;
 
     public static void main(String[] args) {
-        Quest14 converter = new Quest14();
+        quest14 converter = new quest14();
         converter.readValues();
         converter.printConvertedAmount();
     }

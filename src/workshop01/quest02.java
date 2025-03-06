@@ -1,11 +1,11 @@
 package workshop01;
 
-public class Quest02 {
+public class quest02 {
     int difference = 45 - 32;
     int product = 45 * 32;
 
     public static void main(String[] args) {
-        Quest02 mainInstance = new Quest02();
+        quest02 mainInstance = new quest02();
         mainInstance.printDifference();
         mainInstance.printProduct();
     }

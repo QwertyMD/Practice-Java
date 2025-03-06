@@ -2,11 +2,11 @@ package workshop01;
 
 import java.util.Scanner;
 
-public class Quest07 {
+public class quest07 {
     double celsius, fahrenheit;
 
     public static void main(String[] args) {
-        Quest07 mainInstance = new Quest07();
+        quest07 mainInstance = new quest07();
         mainInstance.readCelsius();
         mainInstance.printFahrenheit();
     }

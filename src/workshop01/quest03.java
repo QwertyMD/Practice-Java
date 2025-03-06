@@ -2,13 +2,13 @@ package workshop01;
 
 import java.util.Scanner;
 
-public class Quest03 {
+public class quest03 {
     int intNum;
     double doubleNum;
     char character;
 
     public static void main(String[] args) {
-        Quest03 mainInstance = new Quest03();
+        quest03 mainInstance = new quest03();
         mainInstance.readVals();
         System.out.println(" ");
         mainInstance.printVals();

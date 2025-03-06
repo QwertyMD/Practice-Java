@@ -2,13 +2,13 @@ package workshop01;
 
 import java.util.Scanner;
 
-public class Quest13 {
+public class quest13 {
     int quantity;
     float pricePerItem;
     double totalCost;
 
     public static void main(String[] args) {
-        Quest13 mainInstance = new Quest13();
+        quest13 mainInstance = new quest13();
         mainInstance.readData();
         mainInstance.printTotalCost();
     }

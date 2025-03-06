@@ -2,11 +2,11 @@ package workshop01;
 
 import java.util.Scanner;
 
-public class Quest08 {
+public class quest08 {
     float radius, height, volume;
 
     public static void main(String[] args) {
-        Quest08 mainInstance = new Quest08();
+        quest08 mainInstance = new quest08();
         System.out.println("Volume of cylinder");
         System.out.println(" ");
         mainInstance.readVals();

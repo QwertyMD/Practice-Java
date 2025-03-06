@@ -2,11 +2,11 @@ package workshop01;
 
 import java.util.Scanner;
 
-public class Quest05 {
+public class quest05 {
     float length, breadth, perimeter;
 
     public static void main(String[] args) {
-        Quest05 mainInstance = new Quest05();
+        quest05 mainInstance = new quest05();
         System.out.println("Perimeter of rectangle");
         System.out.println(" ");
         mainInstance.readSides();

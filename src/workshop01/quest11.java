@@ -2,12 +2,12 @@ package workshop01;
 
 import java.util.Scanner;
 
-public class Quest11 {
+public class quest11 {
     float mile;
     double kilometer;
 
     public static void main(String[] args) {
-        Quest11 mainInstance = new Quest11();
+        quest11 mainInstance = new quest11();
         mainInstance.readMile();
         mainInstance.printKilometer();
     }

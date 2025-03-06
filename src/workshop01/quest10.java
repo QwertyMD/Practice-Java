@@ -2,12 +2,12 @@ package workshop01;
 
 import java.util.Scanner;
 
-public class Quest10 {
+public class quest10 {
     int firstNum, secondNum;
     int sum, difference, product, quotient, remainder;
 
     public static void main(String[] args) {
-        Quest10 mainInstance = new Quest10();
+        quest10 mainInstance = new quest10();
         mainInstance.readNums();
         System.out.println(" ");
         mainInstance.printCalc();

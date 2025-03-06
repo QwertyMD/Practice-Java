@@ -2,12 +2,12 @@ package workshop01;
 
 import java.util.Scanner;
 
-public class Quest09 {
+public class quest09 {
     float principle, rate, time;
     double interest;
 
     public static void main(String[] args) {
-        Quest09 mainInstance = new Quest09();
+        quest09 mainInstance = new quest09();
         mainInstance.readVals();
         System.out.println(" ");
         mainInstance.printInterest();

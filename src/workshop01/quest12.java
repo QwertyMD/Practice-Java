@@ -2,11 +2,11 @@ package workshop01;
 
 import java.util.Scanner;
 
-public class Quest12 {
+public class quest12 {
     float radius, area;
 
     public static void main(String[] args) {
-        Quest12 mainInstance = new Quest12();
+        quest12 mainInstance = new quest12();
         System.out.println("Area of circle");
         System.out.println(" ");
         mainInstance.readRadius();
