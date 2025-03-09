@@ -12,10 +12,10 @@ public class task08 {
         int rows = 5;
         for (i = 1; i <= rows; i++) {
             for (j = i; j < rows; j++) {
-                System.out.print(" ");
+                System.out.print("  ");
             }
             for (k = 1; k <= (2 * i - 1); k++) {
-                System.out.print("*");
+                System.out.print("* ");
             }
             System.out.println();
         }
