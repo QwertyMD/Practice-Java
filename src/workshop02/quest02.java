@@ -14,6 +14,7 @@ public class quest02 {
         Scanner nums = new Scanner(System.in);
         System.out.println("Enter a number: ");
         num = nums.nextInt();
+        nums.close();
     }
     public void printTable(){
         for (i=1;i<=10;i++){

@@ -13,6 +13,7 @@ public class task04 {
         Scanner data = new Scanner(System.in);
         System.out.println("Enter gender(F/M): ");
         gender = data.nextLine();
+        data.close();
     }
     public void printGender(){
         switch(gender){

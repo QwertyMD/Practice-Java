@@ -20,6 +20,7 @@ public class quest08 {
         radius = values.nextFloat();
         System.out.println("Enter height: ");
         height = values.nextFloat();
+        values.close();
     }
 
     public void printVolume() {

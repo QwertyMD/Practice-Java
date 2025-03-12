@@ -18,6 +18,7 @@ public class quest14 {
         USD = scanner.nextFloat();
         System.out.println("Enter the exchange rate: ");
         rate = scanner.nextFloat();
+        scanner.close();
     }
 
     public void printConvertedAmount() {

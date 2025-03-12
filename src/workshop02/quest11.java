@@ -15,6 +15,7 @@ public class quest11 {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a number: ");
         num = scanner.nextInt();
+        scanner.close();
     }
 
     public void printFact() {

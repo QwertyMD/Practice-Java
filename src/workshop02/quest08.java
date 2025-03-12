@@ -24,6 +24,7 @@ public class quest08 {
         mark04 = marks.nextInt();
         System.out.println("Enter marks for Computer: ");
         mark05 = marks.nextInt();
+        marks.close();
     }
 
     public void calcGrade() {

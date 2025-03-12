@@ -18,6 +18,7 @@ public class quest06 {
         Scanner side = new Scanner(System.in);
         System.out.println("Enter side: ");
         length = side.nextDouble();
+        side.close();
     }
 
     public void printArea() {

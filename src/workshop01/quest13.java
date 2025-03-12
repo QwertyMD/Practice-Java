@@ -19,6 +19,7 @@ public class quest13 {
         quantity = scanner.nextInt();
         System.out.println("Enter price per item: ");
         pricePerItem = scanner.nextFloat();
+        scanner.close();
     }
 
     public void printTotalCost() {

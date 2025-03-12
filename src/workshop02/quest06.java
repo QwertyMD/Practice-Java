@@ -15,6 +15,7 @@ public class quest06 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a num: ");
         num = scanner.nextInt();
+        scanner.close();
     }
 
     public void checkOddEven() {

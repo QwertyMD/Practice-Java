@@ -23,6 +23,7 @@ public class quest01 {
         age = infos.nextInt();
         System.out.println("Enter number: ");
         number = infos.nextBigInteger();
+        infos.close();
     }
 
     public void printInfo() {

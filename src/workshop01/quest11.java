@@ -16,6 +16,7 @@ public class quest11 {
         Scanner value = new Scanner(System.in);
         System.out.println("Enter the distance in mile: ");
         mile = value.nextFloat();
+        value.close();
     }
 
     public void printKilometer() {

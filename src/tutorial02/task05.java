@@ -15,6 +15,7 @@ public class task05 {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a month number (1-12): ");
         month = scanner.nextInt();
+        scanner.close();
     }
 
     public void printMonthName() {

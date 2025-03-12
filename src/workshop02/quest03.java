@@ -15,6 +15,7 @@ public class quest03 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter marks: ");
         marks = scanner.nextInt();
+        scanner.close();
     }
 
     public void printGrade() {

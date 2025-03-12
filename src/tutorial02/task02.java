@@ -15,6 +15,7 @@ public class task02 {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a number: ");
         number = scanner.nextInt();
+        scanner.close();
     }
 
     public void checkEvenOrOdd() {

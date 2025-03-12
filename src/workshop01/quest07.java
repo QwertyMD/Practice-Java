@@ -15,6 +15,7 @@ public class quest07 {
         Scanner value = new Scanner(System.in);
         System.out.println("Enter temperature in Celsius: ");
         celsius = value.nextDouble();
+        value.close();
     }
 
     public void printFahrenheit() {

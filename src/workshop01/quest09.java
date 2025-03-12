@@ -21,6 +21,7 @@ public class quest09 {
         rate = values.nextFloat();
         System.out.println("Enter time: ");
         time = values.nextFloat();
+        values.close();
     }
 
     public void printInterest() {

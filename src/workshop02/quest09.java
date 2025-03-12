@@ -15,6 +15,7 @@ public class quest09 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the range of even numbers: ");
         range = scanner.nextInt();
+        scanner.close();
     }
 
     public void sumEvenNums() {

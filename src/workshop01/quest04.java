@@ -22,6 +22,7 @@ public class quest04 {
         second_side = sides.nextFloat();
         System.out.println("Enter third side: ");
         third_side = sides.nextFloat();
+        sides.close();
     }
 
     public void printArea() {

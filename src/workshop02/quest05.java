@@ -16,6 +16,7 @@ public class quest05 {
         System.out.println("Do you have a medical cause? (y/n): ");
         choice = scanner.next().charAt(0);
         choice = Character.toLowerCase(choice);
+        scanner.close();
     }
 
     public void printEligibility() {

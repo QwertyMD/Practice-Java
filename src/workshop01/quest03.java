@@ -22,6 +22,7 @@ public class quest03 {
         doubleNum = values.nextDouble();
         System.out.println("Enter character: ");
         character = values.next().charAt(0);
+        values.close();
     }
 
     public void printVals() {

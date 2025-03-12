@@ -17,6 +17,7 @@ public class quest04 {
         age1 = scanner.nextInt();
         System.out.println("Enter age of second person: ");
         age2 = scanner.nextInt();
+        scanner.close();
     }
 
     public void printOldestAndYoungest() {

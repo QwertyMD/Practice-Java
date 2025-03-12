@@ -20,6 +20,7 @@ public class quest05 {
         length = sides.nextFloat();
         System.out.println("Enter breadth: ");
         breadth = sides.nextFloat();
+        sides.close();
     }
 
     public void printPerimeter() {

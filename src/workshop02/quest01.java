@@ -17,6 +17,7 @@ public class quest01 {
         length = sides.nextFloat();
         System.out.println("Enter breadth: ");
         breadth = sides.nextFloat();
+        sides.close();
     }
 
     public void checkSquare() {

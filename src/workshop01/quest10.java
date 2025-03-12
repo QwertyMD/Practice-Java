@@ -19,6 +19,7 @@ public class quest10 {
         firstNum = nums.nextInt();
         System.out.println("Enter second number: ");
         secondNum = nums.nextInt();
+        nums.close();
     }
 
     public void printCalc() {

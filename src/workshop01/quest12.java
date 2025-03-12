@@ -18,6 +18,7 @@ public class quest12 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter radius: ");
         radius = scanner.nextFloat();
+        scanner.close();
     }
 
     public void printArea() {
