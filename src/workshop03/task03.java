@@ -12,6 +12,10 @@ class BankAccount {
         this.accountHolderAddress = accountHolderAddress;
     }
 
+    public BankAccount() {
+        System.out.println("User created!");
+    }
+
     public void depositMoney(float amount) {
         if (amount > 0) {
             balance += amount;
