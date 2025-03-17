@@ -6,7 +6,7 @@ public class task10 {
         mainInstance.showBalance();
     }
 
-    private class BankAccount {
+    private static class BankAccount {
         private float balance;
 
         public float getBalance() {
@@ -20,7 +20,7 @@ public class task10 {
 
     public void showBalance() {
         BankAccount account = new BankAccount();
-        account.setBalance(15000f);
+        account.setBalance(15000.45f);
         System.out.println("Balance: " + account.getBalance());
     }
 }
