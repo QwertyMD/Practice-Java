@@ -1,17 +1,14 @@
 package tutorial04;
 
 public class quest12 {
-    private static final class Animal {
+    private static class Animal {
         public void makeSound() {
-            System.out.println("Grrrhhh");
+            System.out.println("Vow Vow");
         }
     }
 
     private static class Dog extends Animal {
-        @Override
-        public void makeSound() {
-            System.out.println("Bark");
-        }
+
     }
 
     public static void main(String[] args) {
