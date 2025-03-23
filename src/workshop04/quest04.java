@@ -1,4 +1,4 @@
-package workshop04.section01;
+package workshop04;
 
 class Person {
     protected String address;
