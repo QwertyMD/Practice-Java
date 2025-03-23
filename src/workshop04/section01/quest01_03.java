@@ -31,7 +31,7 @@ class Dog extends Animal {
     }
 }
 
-public class quest01 {
+public class quest01_03 {
     public static void main(String[] args) {
         Dog dog = new Dog("Buddy", 3, "Golden Retriever");
         System.out.println("Name: " + dog.getName());
