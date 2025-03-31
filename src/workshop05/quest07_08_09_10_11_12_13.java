@@ -2,6 +2,7 @@ package workshop05;
 
 interface Animal {
     void eat();
+
     void walk();
 }
 
@@ -42,7 +43,7 @@ class Bird implements LivingBeing {
     }
 }
 
-public class quest07_08_09_10_11_12 {
+public class quest07_08_09_10_11_12_13 {
     public static void main(String[] args) {
         Cow cow = new Cow();
         cow.eat();
