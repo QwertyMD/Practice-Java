@@ -9,7 +9,7 @@ public class task05 {
         colors.add("green");
         colors.add("blue");
         colors.set(1, "purple");
-        colors.remove(2);
+        colors.remove("blue");
         System.out.println(colors);
     }
 }
