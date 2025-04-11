@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Account account = new Account();
         Services service = new Services();
+        Transaction transaction = new Transaction();
         while (true) {
             service.displayOffers();
             int primaryChoice = service.sc.nextInt();
@@ -13,16 +14,13 @@ public class Main {
                     int winterChoice = service.sc.nextInt();
                     switch (winterChoice) {
                         case 1:
-                            account.balance -= 1000;
-                            System.out.println("Remaining balance: " + account.balance);
+                            transaction.process(account, 1000, "All time data");
                             break;
                         case 2:
-                            account.balance -= 200;
-                            System.out.println("Remaining balance: " + account.balance);
+                            transaction.process(account, 200, "Night Data");
                             break;
                         case 3:
-                            account.balance -= 100;
-                            System.out.println("Remaining balance: " + account.balance);
+                            transaction.process(account, 100, "Night Voice");
                             break;
                         case 0:
                             service.displayOffers();
@@ -37,16 +35,13 @@ public class Main {
                     int prepaidChoice = service.sc.nextInt();
                     switch (prepaidChoice) {
                         case 1:
-                            account.balance -= 600;
-                            System.out.println("Remaining balance: " + account.balance);
+                            transaction.process(account, 600, "Monthly Package");
                             break;
                         case 2:
-                            account.balance -= 400;
-                            System.out.println("Remaining balance: " + account.balance);
+                            transaction.process(account, 400, "Weekly Package");
                             break;
                         case 3:
-                            account.balance -= 100;
-                            System.out.println("Remaining balance: " + account.balance);
+                            transaction.process(account, 100, "Daily Package");
                             break;
                         case 0:
                             service.displayOffers();
@@ -61,8 +56,7 @@ public class Main {
                     int unlimitedChoice = service.sc.nextInt();
                     switch (unlimitedChoice) {
                         case 1:
-                            account.balance -= 200;
-                            System.out.println("Remaining balance: " + account.balance);
+                            transaction.process(account, 200, "Unlimited Night Data");
                             break;
                         case 0:
                             service.displayOffers();
@@ -77,12 +71,10 @@ public class Main {
                     int voiceChoice = service.sc.nextInt();
                     switch (voiceChoice) {
                         case 1:
-                            account.balance -= 150;
-                            System.out.println("Remaining balance: " + account.balance);
+                            transaction.process(account, 150, "NT Network");
                             break;
                         case 2:
-                            account.balance -= 100;
-                            System.out.println("Remaining balance: " + account.balance);
+                            transaction.process(account, 100, "All Network");
                             break;
                         case 0:
                             service.displayOffers();
@@ -97,16 +89,13 @@ public class Main {
                     int data = service.sc.nextInt();
                     switch (data) {
                         case 1:
-                            account.balance -= 50;
-                            System.out.println("Remaining balance: " + account.balance);
+                            transaction.process(account, 50, "Unlimited Data");
                             break;
                         case 2:
-                            account.balance -= 25;
-                            System.out.println("Remaining balance: " + account.balance);
+                            transaction.process(account, 25, "Daily Data");
                             break;
                         case 3:
-                            account.balance -= 30;
-                            System.out.println("Remaining balance: " + account.balance);
+                            transaction.process(account, 30, "Nightly Data");
                             break;
                         case 0:
                             service.displayOffers();
@@ -117,7 +106,14 @@ public class Main {
                     }
                     break;
                 case 0:
-                    System.out.println("Exiting...");
+                    System.out.println("Subscribed Services: ");
+                    if (!transaction.subServices.isEmpty()) {
+                        for (String subService : transaction.subServices) {
+                            System.out.println("- " + subService);
+                        }
+                    } else {
+                        System.out.println("None");
+                    }
                     return;
                 default:
                     System.out.println("Invalid");
