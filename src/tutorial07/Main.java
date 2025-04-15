@@ -7,22 +7,22 @@ public class Main {
         Transaction transaction = new Transaction();
         while (true) {
             service.displayOffers();
-            int primaryChoice = service.sc.nextInt();
+            String primaryChoice = service.sc.next();
             switch (primaryChoice) {
-                case 1:
+                case "1":
                     service.winterOffer();
-                    int winterChoice = service.sc.nextInt();
+                    String winterChoice = service.sc.next();
                     switch (winterChoice) {
-                        case 1:
+                        case "1":
                             transaction.process(account, 1000, "All time data");
                             break;
-                        case 2:
+                        case "2":
                             transaction.process(account, 200, "Night Data");
                             break;
-                        case 3:
+                        case "3":
                             transaction.process(account, 100, "Night Voice");
                             break;
-                        case 0:
+                        case "0":
                             service.displayOffers();
                             break;
                         default:
@@ -30,20 +30,20 @@ public class Main {
                             break;
                     }
                     break;
-                case 2:
+                case "2":
                     service.prepaidPacks();
-                    int prepaidChoice = service.sc.nextInt();
+                    String prepaidChoice = service.sc.next();
                     switch (prepaidChoice) {
-                        case 1:
+                        case "1":
                             transaction.process(account, 600, "Monthly Package");
                             break;
-                        case 2:
+                        case "2":
                             transaction.process(account, 400, "Weekly Package");
                             break;
-                        case 3:
+                        case "3":
                             transaction.process(account, 100, "Daily Package");
                             break;
-                        case 0:
+                        case "0":
                             service.displayOffers();
                             break;
                         default:
@@ -51,14 +51,14 @@ public class Main {
                             break;
                     }
                     break;
-                case 3:
+                case "3":
                     service.unlimitedNightPacks();
-                    int unlimitedChoice = service.sc.nextInt();
+                    String unlimitedChoice = service.sc.next();
                     switch (unlimitedChoice) {
-                        case 1:
+                        case "1":
                             transaction.process(account, 200, "Unlimited Night Data");
                             break;
-                        case 0:
+                        case "0":
                             service.displayOffers();
                             break;
                         default:
@@ -66,17 +66,17 @@ public class Main {
                             break;
                     }
                     break;
-                case 4:
+                case "4":
                     service.voice();
-                    int voiceChoice = service.sc.nextInt();
+                    String voiceChoice = service.sc.next();
                     switch (voiceChoice) {
-                        case 1:
+                        case "1":
                             transaction.process(account, 150, "NT Network");
                             break;
-                        case 2:
+                        case "2":
                             transaction.process(account, 100, "All Network");
                             break;
-                        case 0:
+                        case "0":
                             service.displayOffers();
                             break;
                         default:
@@ -84,20 +84,20 @@ public class Main {
                             break;
                     }
                     break;
-                case 5:
+                case "5":
                     service.data();
-                    int data = service.sc.nextInt();
+                    String data = service.sc.next();
                     switch (data) {
-                        case 1:
+                        case "1":
                             transaction.process(account, 50, "Unlimited Data");
                             break;
-                        case 2:
+                        case "2":
                             transaction.process(account, 25, "Daily Data");
                             break;
-                        case 3:
+                        case "3":
                             transaction.process(account, 30, "Nightly Data");
                             break;
-                        case 0:
+                        case "0":
                             service.displayOffers();
                             break;
                         default:
@@ -105,7 +105,7 @@ public class Main {
                             break;
                     }
                     break;
-                case 0:
+                case "0":
                     System.out.println("Subscribed Services: ");
                     if (!transaction.subServices.isEmpty()) {
                         for (String subService : transaction.subServices) {
