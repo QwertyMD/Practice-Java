@@ -66,7 +66,7 @@ class Transaction {
     }
 }
 
-public class quest01 {
+public class Test {
     public static void main(String[] args) {
         Account account1 = new Account("Harold", "Denver", "123", 1000.0);
         Account account2 = new Account("Syndy", "Emilson", "456", 500.0);
