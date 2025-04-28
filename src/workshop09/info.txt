@@ -1,0 +1,4 @@
+DairyMilk;100.0
+KitKat;60.0
+KitKat;30.0
+DairyMilk;50.0
