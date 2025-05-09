@@ -1,8 +1,8 @@
 package banking_app;
 
 public class Account extends Customer {
-    int accountNumber;
-    double accountBalance;
+    private int accountNumber;
+    private double accountBalance;
 
     public Account(String firstName, String lastName, int accountNumber, double accountBalance) {
         super(firstName, lastName);

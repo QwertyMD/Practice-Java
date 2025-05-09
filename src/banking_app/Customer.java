@@ -1,7 +1,7 @@
 package banking_app;
 
 public class Customer {
-    String firstName, lastName;
+    private String firstName, lastName;
 
     public Customer(String firstName, String lastName) {
         this.firstName = firstName;
@@ -14,5 +14,13 @@ public class Customer {
 
     public String getLastName() {
         return lastName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }

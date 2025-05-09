@@ -3,30 +3,77 @@ package banking_app;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.LinkedList;
 
 public class ReadAccounts {
-    String filePath;
+    private BufferedReader reader;
+    private String url;
 
-    public ReadAccounts(String filePath) {
-        this.filePath = filePath;
+    public ReadAccounts(String url) {
+        this.url = url;
     }
 
-    public void readAccountsFromFile() {
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+    public LinkedList<String> getFirstNames() {
+        LinkedList<String> firstNames = new LinkedList<>();
+        try {
+            reader = new BufferedReader(new FileReader(url));
             String line;
-            while ((line = br.readLine()) != null) {
+            while ((line = reader.readLine()) != null) {
                 String[] data = line.split(",");
                 String firstName = data[0];
-                String lastName = data[1];
-                int accountNumber = Integer.parseInt(data[2]);
-                double accountBalance = Double.parseDouble(data[3]);
-
-                Account account = new Account(firstName, lastName, accountNumber, accountBalance);
-                System.out.println("Account created: " + account.getAccountNumber() + ", " + firstName + lastName + ", " + account.getAccountBalance());
+                firstNames.add(firstName);
             }
         } catch (IOException e) {
-            System.out.println("Error reading file: " + e.getMessage());
+            System.out.println(e.getMessage());
         }
+        return firstNames;
     }
 
+    public LinkedList<String> getLastNames() {
+        LinkedList<String> lastNames = new LinkedList<>();
+        try {
+            reader = new BufferedReader(new FileReader(url));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] data = line.split(",");
+                String lastName = data[1];
+                lastNames.add(lastName);
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        return lastNames;
+    }
+
+    public LinkedList<String> getAccountNumbers() {
+        LinkedList<String> accountNumbers = new LinkedList<>();
+        try {
+            reader = new BufferedReader(new FileReader(url));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] data = line.split(",");
+                String accountNumber = data[2];
+                accountNumbers.add(accountNumber);
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        return accountNumbers;
+    }
+
+    public LinkedList<String> getAccountBalances() {
+        LinkedList<String> accountBalances = new LinkedList<>();
+        try {
+            reader = new BufferedReader(new FileReader(url));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] data = line.split(",");
+                String accountBalance = data[3];
+                accountBalances.add(accountBalance);
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        return accountBalances;
+    }
 }
