@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.util.LinkedList;
 
 public class GUI {
-    private JPanel panel1;
+    JPanel panel;
     private JButton showAllButton;
     private JButton depositButton;
     private JButton withdrawButton;
@@ -18,32 +18,47 @@ public class GUI {
     private JTextField withdrawAmount;
     private JTextField transferAmount;
 
-    public GUI() {
+    public GUI(LinkedList<Account> accounts) {
         showAllButton.addActionListener(e -> {
-            ReadAccounts readAccounts = new ReadAccounts("src/banking_app/Accounts.csv");
-            LinkedList<String> firstNames = readAccounts.getFirstNames();
-            LinkedList<String> lastNames = readAccounts.getLastNames();
-            LinkedList<String> accountNumbers = readAccounts.getAccountNumbers();
-            LinkedList<String> accountBalances = readAccounts.getAccountBalances();
-
-            StringBuilder message = new StringBuilder();
-            for (int i = 0; i < firstNames.size(); i++) {
-                message
+            StringBuilder sb = new StringBuilder();
+            for (Account account : accounts) {
+                sb
                         .append("=========================\n")
-                        .append("Account Number: ").append(accountNumbers.get(i)).append("\n")
-                        .append("Name: ").append(firstNames.get(i)).append(" ").append(lastNames.get(i)).append("\n")
-                        .append("Balance: ").append(accountBalances.get(i)).append("\n")
+                        .append("Account: ").append(account.getAccountNumber()).append("\n")
+                        .append("Name: ").append(account.getFirstName()).append(" ").append(account.getLastName()).append("\n")
+                        .append("Balance: ").append(account.getAccountBalance()).append("\n")
                         .append("=========================\n");
             }
-            messageBox.setText(message.toString());
+            messageBox.setText(sb.toString());
         });
-    }
 
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Banking App");
-        frame.setContentPane(new GUI().panel1);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
+        depositButton.addActionListener(e -> {
+            int accountNumber = Integer.parseInt(accountNumberDeposit.getText());
+            int amount = Integer.parseInt(depositAmount.getText());
+            for (Account account : accounts) {
+                if (account.getAccountNumber() == accountNumber) {
+                    account.deposit(amount);
+                    messageBox.setText("Deposited " + amount + " to account " + accountNumber);
+                    return;
+                }
+            }
+            messageBox.setText("Account not found.");
+        });
+
+        withdrawButton.addActionListener(e -> {
+            int accountNumber = Integer.parseInt(accountNumberWithdraw.getText());
+            int amount = Integer.parseInt(withdrawAmount.getText());
+            for (Account account : accounts) {
+                if (account.getAccountNumber() == accountNumber) {
+                    if (account.withdraw(amount)) {
+                        messageBox.setText("Withdrew " + amount + " from account " + accountNumber);
+                    } else {
+                        messageBox.setText("Withdrawal failed.");
+                    }
+                    return;
+                }
+            }
+            messageBox.setText("Account not found.");
+        });
     }
 }

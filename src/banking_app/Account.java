@@ -1,10 +1,9 @@
 package banking_app;
 
 public class Account extends Customer {
-    private int accountNumber;
-    private double accountBalance;
+    private int accountNumber, accountBalance;
 
-    public Account(String firstName, String lastName, int accountNumber, double accountBalance) {
+    public Account(String firstName, String lastName, int accountNumber, int accountBalance) {
         super(firstName, lastName);
         this.accountNumber = accountNumber;
         this.accountBalance = accountBalance;
@@ -18,7 +17,7 @@ public class Account extends Customer {
         return accountBalance;
     }
 
-    public void deposit(double amount) {
+    public void deposit(int amount) {
         if (amount < 0) {
             System.out.println("Invalid amount.");
         } else {
@@ -26,7 +25,7 @@ public class Account extends Customer {
         }
     }
 
-    public boolean withdraw(double amount) {
+    public boolean withdraw(int amount) {
         if (amount < 0) {
             System.out.println("Invalid amount.");
             return false;

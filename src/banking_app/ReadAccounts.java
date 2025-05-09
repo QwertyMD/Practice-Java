@@ -45,15 +45,15 @@ public class ReadAccounts {
         return lastNames;
     }
 
-    public LinkedList<String> getAccountNumbers() {
-        LinkedList<String> accountNumbers = new LinkedList<>();
+    public LinkedList<Integer> getAccountNumbers() {
+        LinkedList<Integer> accountNumbers = new LinkedList<>();
         try {
             reader = new BufferedReader(new FileReader(url));
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] data = line.split(",");
                 String accountNumber = data[2];
-                accountNumbers.add(accountNumber);
+                accountNumbers.add(Integer.valueOf(accountNumber));
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());
@@ -61,15 +61,15 @@ public class ReadAccounts {
         return accountNumbers;
     }
 
-    public LinkedList<String> getAccountBalances() {
-        LinkedList<String> accountBalances = new LinkedList<>();
+    public LinkedList<Integer> getAccountBalances() {
+        LinkedList<Integer> accountBalances = new LinkedList<>();
         try {
             reader = new BufferedReader(new FileReader(url));
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] data = line.split(",");
                 String accountBalance = data[3];
-                accountBalances.add(accountBalance);
+                accountBalances.add(Integer.valueOf(accountBalance));
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());
