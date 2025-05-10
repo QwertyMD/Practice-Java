@@ -26,7 +26,7 @@ public class GUI {
                         .append("=========================\n")
                         .append("Account: ").append(account.getAccountNumber()).append("\n")
                         .append("Name: ").append(account.getFirstName()).append(" ").append(account.getLastName()).append("\n")
-                        .append("Balance: ").append(account.getAccountBalance()).append("\n")
+                        .append("Balance: Rs.").append(account.getAccountBalance()).append("\n")
                         .append("=========================\n");
             }
             messageBox.setText(sb.toString());
@@ -37,8 +37,11 @@ public class GUI {
             int amount = Integer.parseInt(depositAmount.getText());
             for (Account account : accounts) {
                 if (account.getAccountNumber() == accountNumber) {
-                    account.deposit(amount);
-                    messageBox.setText("Deposited " + amount + " to account " + accountNumber);
+                    if (account.deposit(amount)) {
+                        messageBox.setText("Deposited Rs." + amount + " to Account " + accountNumber);
+                    } else {
+                        messageBox.setText("Invalid amount.");
+                    }
                     return;
                 }
             }
@@ -51,9 +54,9 @@ public class GUI {
             for (Account account : accounts) {
                 if (account.getAccountNumber() == accountNumber) {
                     if (account.withdraw(amount)) {
-                        messageBox.setText("Withdrew " + amount + " from account " + accountNumber);
+                        messageBox.setText("Withdrew Rs." + amount + " from Account " + accountNumber);
                     } else {
-                        messageBox.setText("Withdrawal failed.");
+                        messageBox.setText("Invalid amount or insufficient balance.");
                     }
                     return;
                 }
