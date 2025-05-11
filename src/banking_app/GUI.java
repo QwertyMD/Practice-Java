@@ -17,6 +17,7 @@ public class GUI {
     private JTextField depositAmount;
     private JTextField withdrawAmount;
     private JTextField transferAmount;
+    private JButton writeToCSVButton;
 
     public GUI(LinkedList<Account> accounts) {
         showAllButton.addActionListener(e -> {
@@ -62,6 +63,45 @@ public class GUI {
                 }
             }
             messageBox.setText("Account not found.");
+        });
+
+        transferButton.addActionListener(e -> {
+            int fromAccountNumber = Integer.parseInt(accountNumberFrom.getText());
+            int toAccountNumber = Integer.parseInt(accountNumberTo.getText());
+            int amount = Integer.parseInt(transferAmount.getText());
+            Account fromAccount = null;
+            Account toAccount = null;
+            for (Account account : accounts) {
+                if (account.getAccountNumber() == fromAccountNumber) {
+                    fromAccount = account;
+                }
+                if (account.getAccountNumber() == toAccountNumber) {
+                    toAccount = account;
+                }
+            }
+            if (fromAccount == null) {
+                messageBox.setText("From account not found.");
+                return;
+            }
+            if (toAccount == null) {
+                messageBox.setText("To account not found.");
+                return;
+            }
+            if (fromAccount.withdraw(amount)) {
+                toAccount.deposit(amount);
+                messageBox.setText("Transferred Rs." + amount + " from Account " + fromAccountNumber + " to Account " + toAccountNumber);
+            } else {
+                messageBox.setText("Invalid amount or insufficient balance.");
+            }
+        });
+
+        writeToCSVButton.addActionListener(e -> {
+            String filePath = "src/banking_app/Accounts.csv";
+            WriteAccounts writeAccounts = new WriteAccounts(filePath);
+            for (Account account : accounts) {
+                writeAccounts.writeToCSV(account);
+            }
+            messageBox.setText("Accounts written to CSV file.");
         });
     }
 }
