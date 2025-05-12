@@ -87,21 +87,16 @@ public class GUI {
                 messageBox.setText("To account not found.");
                 return;
             }
-            if (fromAccount.withdraw(amount)) {
-                toAccount.deposit(amount);
+            if (fromAccount.getAccountNumber() == toAccount.getAccountNumber()) {
+                messageBox.setText("Cannot transfer to same account.");
+                return;
+            }
+            Transaction transaction = new Transaction();
+            if (transaction.transfer(fromAccount, toAccount, amount)) {
                 messageBox.setText("Transferred Rs." + amount + " from Account " + fromAccountNumber + " to Account " + toAccountNumber);
             } else {
                 messageBox.setText("Invalid amount or insufficient balance.");
             }
-        });
-
-        writeToCSVButton.addActionListener(e -> {
-            String filePath = "src/banking_app/Accounts.csv";
-            WriteAccounts writeAccounts = new WriteAccounts(filePath);
-            for (Account account : accounts) {
-                writeAccounts.writeToCSV(account);
-            }
-            messageBox.setText("Accounts written to CSV file.");
         });
     }
 }
