@@ -1,10 +1,10 @@
 package banking_app;
 
 public class Account extends Customer {
-    private final int accountNumber;
-    private int accountBalance;
+    private int accountNumber;
+    private double accountBalance;
 
-    public Account(String firstName, String lastName, int accountNumber, int accountBalance) {
+    public Account(String firstName, String lastName, int accountNumber, double accountBalance) {
         super(firstName, lastName);
         this.accountNumber = accountNumber;
         this.accountBalance = accountBalance;
@@ -18,7 +18,7 @@ public class Account extends Customer {
         return accountBalance;
     }
 
-    public boolean deposit(int amount) {
+    public boolean deposit(double amount) {
         if (amount > 0) {
             accountBalance += amount;
             return true;
@@ -26,7 +26,7 @@ public class Account extends Customer {
         return false;
     }
 
-    public boolean withdraw(int amount) {
+    public boolean withdraw(double amount) {
         if (amount > 0 && amount <= accountBalance) {
             accountBalance -= amount;
             return true;

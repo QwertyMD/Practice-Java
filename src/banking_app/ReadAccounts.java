@@ -61,15 +61,15 @@ public class ReadAccounts {
         return accountNumbers;
     }
 
-    public LinkedList<Integer> getAccountBalances() {
-        LinkedList<Integer> accountBalances = new LinkedList<>();
+    public LinkedList<Double> getAccountBalances() {
+        LinkedList<Double> accountBalances = new LinkedList<>();
         try {
             reader = new BufferedReader(new FileReader(url));
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] data = line.split(",");
                 String accountBalance = data[3];
-                accountBalances.add(Integer.valueOf(accountBalance));
+                accountBalances.add(Double.valueOf(accountBalance));
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());

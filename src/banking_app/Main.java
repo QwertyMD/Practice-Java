@@ -8,7 +8,7 @@ public class Main {
     public static LinkedList<String> firstNames;
     public static LinkedList<String> lastNames;
     public static LinkedList<Integer> accountNumbers;
-    public static LinkedList<Integer> accountBalances;
+    public static LinkedList<Double> accountBalances;
     public static String file;
     public static ReadAccounts readAccounts;
     public static GUI gui;

@@ -35,7 +35,9 @@ public class GUI {
 
         depositButton.addActionListener(e -> {
             int accountNumber = Integer.parseInt(accountNumberDeposit.getText());
-            int amount = Integer.parseInt(depositAmount.getText());
+            double amount = Double.parseDouble(depositAmount.getText());
+            accountNumberDeposit.setText("");
+            depositAmount.setText("");
             for (Account account : accounts) {
                 if (account.getAccountNumber() == accountNumber) {
                     if (account.deposit(amount)) {
@@ -51,7 +53,9 @@ public class GUI {
 
         withdrawButton.addActionListener(e -> {
             int accountNumber = Integer.parseInt(accountNumberWithdraw.getText());
-            int amount = Integer.parseInt(withdrawAmount.getText());
+            double amount = Double.parseDouble(withdrawAmount.getText());
+            accountNumberWithdraw.setText("");
+            withdrawAmount.setText("");
             for (Account account : accounts) {
                 if (account.getAccountNumber() == accountNumber) {
                     if (account.withdraw(amount)) {
@@ -68,7 +72,10 @@ public class GUI {
         transferButton.addActionListener(e -> {
             int fromAccountNumber = Integer.parseInt(accountNumberFrom.getText());
             int toAccountNumber = Integer.parseInt(accountNumberTo.getText());
-            int amount = Integer.parseInt(transferAmount.getText());
+            double amount = Double.parseDouble(transferAmount.getText());
+            accountNumberFrom.setText("");
+            accountNumberTo.setText("");
+            transferAmount.setText("");
             Account fromAccount = null;
             Account toAccount = null;
             for (Account account : accounts) {
@@ -97,6 +104,12 @@ public class GUI {
             } else {
                 messageBox.setText("Invalid amount or insufficient balance.");
             }
+        });
+
+        writeToCSVButton.addActionListener(e -> {
+            WriteAccounts writeAccounts = new WriteAccounts("src/banking_app/Accounts.csv");
+            writeAccounts.writeToCSV(accounts);
+            messageBox.setText("Accounts written to CSV file.");
         });
     }
 }
