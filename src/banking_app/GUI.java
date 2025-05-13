@@ -1,6 +1,8 @@
 package banking_app;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import java.awt.*;
 import java.util.LinkedList;
 
 public class GUI {
@@ -20,15 +22,34 @@ public class GUI {
     private JButton writeToCSVButton;
 
     public GUI(LinkedList<Account> accounts) {
+        Border roundedBorder = BorderFactory.createLineBorder(new Color(255, 87, 34), 3, true);
+        Border paddingBorder = BorderFactory.createEmptyBorder(3, 5, 3, 5);
+        Border compoundBorder = BorderFactory.createCompoundBorder(roundedBorder, paddingBorder);
+
+        showAllButton.setBorder(compoundBorder);
+        depositButton.setBorder(compoundBorder);
+        withdrawButton.setBorder(compoundBorder);
+        transferButton.setBorder(compoundBorder);
+        writeToCSVButton.setBorder(compoundBorder);
+
+        accountNumberDeposit.setBorder(compoundBorder);
+        accountNumberWithdraw.setBorder(compoundBorder);
+        accountNumberFrom.setBorder(compoundBorder);
+        accountNumberTo.setBorder(compoundBorder);
+        depositAmount.setBorder(compoundBorder);
+        withdrawAmount.setBorder(compoundBorder);
+        transferAmount.setBorder(compoundBorder);
+        messageBox.setBorder(compoundBorder);
+
         showAllButton.addActionListener(e -> {
             StringBuilder sb = new StringBuilder();
             for (Account account : accounts) {
                 sb
-                        .append("=========================\n")
-                        .append("Account: ").append(account.getAccountNumber()).append("\n")
+                        .append("-----------------------------\n")
+                        .append("Account ID: ").append(account.getAccountNumber()).append("\n")
                         .append("Name: ").append(account.getFirstName()).append(" ").append(account.getLastName()).append("\n")
                         .append("Balance: Rs.").append(account.getAccountBalance()).append("\n")
-                        .append("=========================\n");
+                        .append("-----------------------------\n\n");
             }
             messageBox.setText(sb.toString());
         });
@@ -41,7 +62,7 @@ public class GUI {
             for (Account account : accounts) {
                 if (account.getAccountNumber() == accountNumber) {
                     if (account.deposit(amount)) {
-                        messageBox.setText("Deposited Rs." + amount + " to Account " + accountNumber);
+                        messageBox.setText("Deposited Rs." + amount + " to Account ID: " + accountNumber);
                     } else {
                         messageBox.setText("Invalid amount.");
                     }
@@ -59,7 +80,7 @@ public class GUI {
             for (Account account : accounts) {
                 if (account.getAccountNumber() == accountNumber) {
                     if (account.withdraw(amount)) {
-                        messageBox.setText("Withdrew Rs." + amount + " from Account " + accountNumber);
+                        messageBox.setText("Withdrew Rs." + amount + " from Account ID: " + accountNumber);
                     } else {
                         messageBox.setText("Invalid amount or insufficient balance.");
                     }
@@ -100,7 +121,7 @@ public class GUI {
             }
             Transaction transaction = new Transaction();
             if (transaction.transfer(fromAccount, toAccount, amount)) {
-                messageBox.setText("Transferred Rs." + amount + " from Account " + fromAccountNumber + " to Account " + toAccountNumber);
+                messageBox.setText("Transferred Rs." + amount + " from Account ID: " + fromAccountNumber + " to Account ID: " + toAccountNumber);
             } else {
                 messageBox.setText("Invalid amount or insufficient balance.");
             }
