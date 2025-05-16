@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="panel" layout-manager="GridLayoutManager" row-count="7" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="10" left="10" bottom="10" right="10"/>
     <constraints>
-      <xy x="20" y="20" width="852" height="400"/>
+      <xy x="20" y="20" width="852" height="449"/>
     </constraints>
     <properties>
       <background color="-13750738"/>
@@ -34,7 +34,7 @@
           <icon value="banking_app/deposit.png"/>
           <iconTextGap value="10"/>
           <inheritsPopupMenu value="false"/>
-          <opaque value="false"/>
+          <opaque value="true"/>
           <requestFocusEnabled value="true"/>
           <rolloverEnabled value="true"/>
           <selected value="false"/>
@@ -65,7 +65,7 @@
           <icon value="banking_app/withdraw.png"/>
           <iconTextGap value="10"/>
           <inheritsPopupMenu value="false"/>
-          <opaque value="false"/>
+          <opaque value="true"/>
           <requestFocusEnabled value="true"/>
           <rolloverEnabled value="true"/>
           <selected value="false"/>
@@ -96,7 +96,7 @@
           <icon value="banking_app/transfer.png"/>
           <iconTextGap value="10"/>
           <inheritsPopupMenu value="false"/>
-          <opaque value="false"/>
+          <opaque value="true"/>
           <requestFocusEnabled value="true"/>
           <rolloverEnabled value="true"/>
           <selected value="false"/>
@@ -321,7 +321,7 @@
           <icon value="banking_app/quill-pen.png"/>
           <iconTextGap value="10"/>
           <inheritsPopupMenu value="false"/>
-          <opaque value="false"/>
+          <opaque value="true"/>
           <requestFocusEnabled value="true"/>
           <rolloverEnabled value="true"/>
           <selected value="false"/>
@@ -353,15 +353,44 @@
           <icon value="banking_app/eye.png"/>
           <iconTextGap value="10"/>
           <inheritsPopupMenu value="false"/>
-          <opaque value="false"/>
+          <opaque value="true"/>
           <requestFocusEnabled value="true"/>
           <rolloverEnabled value="true"/>
           <selected value="false"/>
-          <text value="Show All"/>
+          <text value="Show All/Refresh"/>
           <verifyInputWhenFocusTarget value="true"/>
           <visible value="true"/>
         </properties>
       </component>
+      <scrollpane id="d4c18" binding="scrollPaneTable">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="4" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <opaque value="false"/>
+          <visible value="false"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="b02f8" class="javax.swing.JTable" binding="accountTable">
+            <constraints/>
+            <properties>
+              <autoCreateColumnsFromModel value="true"/>
+              <autoCreateRowSorter value="true"/>
+              <background color="-12434878"/>
+              <enabled value="false"/>
+              <focusable value="false"/>
+              <font name="JetBrains Mono" size="20"/>
+              <foreground color="-1"/>
+              <intercellSpacing width="10" height="0"/>
+              <opaque value="true"/>
+              <rowHeight value="40"/>
+              <rowMargin value="0"/>
+              <rowSelectionAllowed value="false"/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
     </children>
   </grid>
 </form>

@@ -2,6 +2,7 @@ package banking_app;
 
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.LinkedList;
 
@@ -20,6 +21,8 @@ public class GUI {
     private JTextField withdrawAmount;
     private JTextField transferAmount;
     private JButton writeToCSVButton;
+    private JTable accountTable;
+    private JScrollPane scrollPaneTable;
 
     public GUI(LinkedList<Account> accounts) {
         Border roundedBorder = BorderFactory.createLineBorder(new Color(255, 87, 34), 3, true);
@@ -41,17 +44,21 @@ public class GUI {
         transferAmount.setBorder(compoundBorder);
         messageBox.setBorder(compoundBorder);
 
+        scrollPaneTable.setBorder(roundedBorder);
+
         showAllButton.addActionListener(e -> {
-            StringBuilder sb = new StringBuilder();
-            for (Account account : accounts) {
-                sb
-                        .append("-----------------------------\n")
-                        .append("Account ID: ").append(account.getAccountNumber()).append("\n")
-                        .append("Name: ").append(account.getFirstName()).append(" ").append(account.getLastName()).append("\n")
-                        .append("Balance: Rs.").append(account.getAccountBalance()).append("\n")
-                        .append("-----------------------------\n\n");
+            String[] columnNames = {"Account ID", "First Name", "Last Name", "Balance"};
+            Object[][] data = new Object[accounts.size()][4];
+            for (int i = 0; i < accounts.size(); i++) {
+                Account account = accounts.get(i);
+                data[i][0] = account.getAccountNumber();
+                data[i][1] = account.getFirstName();
+                data[i][2] = account.getLastName();
+                data[i][3] = account.getAccountBalance();
             }
-            messageBox.setText(sb.toString());
+            accountTable.setModel(new DefaultTableModel(data, columnNames));
+            scrollPaneTable.setVisible(true);
+            messageBox.setText("Updated the account table.");
         });
 
         depositButton.addActionListener(e -> {
