@@ -1,4 +1,4 @@
-package banking_app;
+package banking_app.SubClasses;
 
 public class Customer {
     private String firstName, lastName;

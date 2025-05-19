@@ -1,4 +1,4 @@
-package banking_app;
+package banking_app.SubClasses;
 
 public class Transaction {
     public boolean transfer(Account fromAccount, Account toAccount, double amount) {

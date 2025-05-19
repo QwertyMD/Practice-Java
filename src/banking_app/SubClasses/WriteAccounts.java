@@ -1,4 +1,4 @@
-package banking_app;
+package banking_app.SubClasses;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

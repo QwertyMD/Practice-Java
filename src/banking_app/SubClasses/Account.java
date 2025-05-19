@@ -1,4 +1,4 @@
-package banking_app;
+package banking_app.SubClasses;
 
 public class Account extends Customer {
     private int accountNumber;
