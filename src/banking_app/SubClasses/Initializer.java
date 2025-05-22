@@ -13,6 +13,7 @@ public class Initializer {
     public ReadAccounts readAccounts;
     public GUI gui;
 
+    // method to get account details from CSV file and initialize GUI
     public void init() {
         accounts = new LinkedList<>();
         file = "src/banking_app/CSV/Accounts.csv";

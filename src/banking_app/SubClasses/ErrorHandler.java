@@ -3,6 +3,7 @@ package banking_app.SubClasses;
 import javax.swing.*;
 
 public class ErrorHandler {
+    // method to handle errors for deposit and withdraw methods
     public void errorHandler(String accNum, String amt) {
         if (accNum.isEmpty() && amt.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Account and Amount Fields are Empty");
@@ -17,6 +18,7 @@ public class ErrorHandler {
         }
     }
 
+    // method to handle errors for transfer method
     public void errorHandler(String fromAccountNumber, String toAccountNumber, String amount) {
         if (fromAccountNumber.isEmpty() && toAccountNumber.isEmpty() && amount.isEmpty()) {
             JOptionPane.showMessageDialog(null, "From Account, To Account and Amount Fields are Empty");
@@ -35,6 +37,7 @@ public class ErrorHandler {
         }
     }
 
+    // method to handle errors for transfer method
     public void errorHandler(Account fromAccount, Account toAccount, int fromAccountNumber, int toAccountNumber) {
         if (fromAccount == null && toAccount == null) {
             JOptionPane.showMessageDialog(null, "From Account ID: " + fromAccountNumber + " and To Account ID: " + toAccountNumber + " not found.");

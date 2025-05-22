@@ -9,8 +9,9 @@ import java.awt.event.ActionListener;
 import java.util.LinkedList;
 
 public class GUI {
+    // GUI components
     public JPanel panel;
-    private JButton showAllButton;
+    private JButton showHideButton;
     private JButton depositButton;
     private JButton withdrawButton;
     private JButton transferButton;
@@ -22,13 +23,15 @@ public class GUI {
     private JButton writeToCSVButton;
     private JTable accountTable;
     private JScrollPane scrollPaneTable;
-
+    
     public GUI(LinkedList<Account> accounts) {
+        // initialize borders
         Border roundedBorder = BorderFactory.createLineBorder(new Color(255, 87, 34), 3, true);
         Border paddingBorder = BorderFactory.createEmptyBorder(3, 5, 3, 5);
         Border compoundBorder = BorderFactory.createCompoundBorder(roundedBorder, paddingBorder);
-
-        showAllButton.setBorder(compoundBorder);
+        
+        // set borders to GUI components
+        showHideButton.setBorder(compoundBorder);
         depositButton.setBorder(compoundBorder);
         withdrawButton.setBorder(compoundBorder);
         transferButton.setBorder(compoundBorder);
@@ -40,7 +43,8 @@ public class GUI {
         transferAmount.setBorder(compoundBorder);
         scrollPaneTable.setBorder(roundedBorder);
 
-        showAllButton.addActionListener(new HandlerClass("showAll", accounts));
+        // setup action listeners and handlers for buttons
+        showHideButton.addActionListener(new HandlerClass("showHide", accounts));
         depositButton.addActionListener(new HandlerClass("deposit", accounts));
         withdrawButton.addActionListener(new HandlerClass("withdraw", accounts));
         transferButton.addActionListener(new HandlerClass("transfer", accounts));
@@ -48,19 +52,21 @@ public class GUI {
     }
 
     private class HandlerClass implements ActionListener {
-        private final String action;
-        private final LinkedList<Account> accounts;
+        private final String action;  // action to be performed
+        private final LinkedList<Account> accounts;  // list of accounts
 
+        // constructor to initialize action and accounts
         public HandlerClass(String action, LinkedList<Account> accounts) {
-            this.action = action;
-            this.accounts = accounts;
+            this.action = action;  // set action
+            this.accounts = accounts;  // set accounts
         }
 
-        ErrorHandler error = new ErrorHandler();
+        ErrorHandler error = new ErrorHandler();  // create instance of ErrorHandler class
 
+        // method to update the table with account details
         public void handleFetch() {
             String[] columnNames = {"Account ID", "First Name", "Last Name", "Balance"};
-            Object[][] data = new Object[accounts.size()][4];
+            Object[][] data = new Object[accounts.size()][4];  // create data array for table
             for (int i = 0; i < accounts.size(); i++) {
                 Account account = accounts.get(i);
                 data[i][0] = account.getAccountNumber();
@@ -68,21 +74,23 @@ public class GUI {
                 data[i][2] = account.getLastName();
                 data[i][3] = account.getAccountBalance();
             }
-            accountTable.setModel(new DefaultTableModel(data, columnNames));
+            accountTable.setModel(new DefaultTableModel(data, columnNames));  // set table model
             scrollPaneTable.setVisible(true);
-            panel.revalidate();
+            panel.revalidate();  // revalidate panel to update layout
             JOptionPane.showMessageDialog(null, "Accounts fetched successfully.");
         }
 
-        public void handleShowAll() {
+        // method to show or hide the table
+        public void handleShowHide() {
             if (scrollPaneTable.isVisible()) {
                 scrollPaneTable.setVisible(false);
                 panel.revalidate();
             } else {
-                handleFetch();
+                handleFetch();  // update table when shown
             }
         }
 
+        // method to handle deposit or withdraw actions
         public void handleDepositWithdraw(String action) {
             String accNum = accountNumber.getText().trim();
             String amt = amount.getText().trim();
@@ -113,13 +121,14 @@ public class GUI {
         }
 
         public void handleDeposit() {
-            handleDepositWithdraw("deposit");
+            handleDepositWithdraw("deposit");  // call method for deposit
         }
 
         public void handleWithdraw() {
-            handleDepositWithdraw("withdraw");
+            handleDepositWithdraw("withdraw");  // call method for withdraw
         }
 
+        // method to handle transfer action
         public void handleTransfer() {
             String fromAccNum = accountNumberFrom.getText().trim();
             String toAccNum = accountNumberTo.getText().trim();
@@ -146,19 +155,21 @@ public class GUI {
 
             error.errorHandler(fromAccount, toAccount, fromAccountNumber, toAccountNumber);
 
-            Transaction transaction = new Transaction();
+            Transaction transaction = new Transaction();  // create instance of Transaction class
             if (transaction.transfer(fromAccount, toAccount, amount)) {
                 JOptionPane.showMessageDialog(null, "Transferred Rs." + amount + " from Account ID: " + fromAccountNumber + " to Account ID: " + toAccountNumber);
                 handleFetch();
             }
         }
 
+        // method to account details from table to CSV file
         public void handleWriteToCSV() {
             WriteAccounts writeAccounts = new WriteAccounts("src/banking_app/CSV/Accounts.csv");
             writeAccounts.writeToCSV(accounts);
             JOptionPane.showMessageDialog(null, "Accounts written to CSV file successfully.");
         }
 
+        // method to clear input fields
         public void clearFields() {
             accountNumber.setText("");
             accountNumberFrom.setText("");
@@ -168,9 +179,10 @@ public class GUI {
         }
 
         @Override
+        // method to handle button actions
         public void actionPerformed(ActionEvent e) {
             switch (action) {
-                case "showAll" -> handleShowAll();
+                case "showHide" -> handleShowHide();
                 case "deposit" -> handleDeposit();
                 case "withdraw" -> handleWithdraw();
                 case "transfer" -> handleTransfer();

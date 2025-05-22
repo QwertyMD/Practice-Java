@@ -9,9 +9,10 @@ public class WriteAccounts {
     private final String url;
 
     public WriteAccounts(String url) {
-        this.url = url;
+        this.url = url;  // set file path
     }
 
+    // method to write account details from table to CSV file
     public void writeToCSV(LinkedList<Account> accounts) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(url))) {
             for (Account account : accounts) {

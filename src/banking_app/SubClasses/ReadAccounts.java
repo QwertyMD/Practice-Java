@@ -13,9 +13,10 @@ public class ReadAccounts {
     private final String url;
 
     public ReadAccounts(String url) {
-        this.url = url;
+        this.url = url;  // set file path
     }
 
+    // method to read accounts from CSV file
     public void readAccounts(String url, int index) {
         try (BufferedReader reader = new BufferedReader(new FileReader(url))) {
             String line;
@@ -34,21 +35,25 @@ public class ReadAccounts {
     }
 
 
+    // method to get first names and add to list of first names
     public LinkedList<String> getFirstNames() {
         readAccounts(url, 0);
         return firstNames;
     }
 
+    // method to get last names and add to list of last names
     public LinkedList<String> getLastNames() {
         readAccounts(url, 1);
         return lastNames;
     }
 
+    // method to get account numbers and add to list of account numbers
     public LinkedList<Integer> getAccountNumbers() {
         readAccounts(url, 2);
         return accountNumbers;
     }
 
+    // method to get account balances and add to list of account balances
     public LinkedList<Double> getAccountBalances() {
         readAccounts(url, 3);
         return accountBalances;
