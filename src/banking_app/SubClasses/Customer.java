@@ -1,7 +1,7 @@
 package banking_app.SubClasses;
 
 public class Customer {
-    private String firstName, lastName;
+    private final String firstName, lastName;
 
     public Customer(String firstName, String lastName) {
         this.firstName = firstName;

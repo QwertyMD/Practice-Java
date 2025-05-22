@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 public class WriteAccounts {
-    private String url;
+    private final String url;
 
     public WriteAccounts(String url) {
         this.url = url;

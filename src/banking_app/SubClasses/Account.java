@@ -1,7 +1,7 @@
 package banking_app.SubClasses;
 
 public class Account extends Customer {
-    private int accountNumber;
+    private final int accountNumber;
     private double accountBalance;
 
     public Account(String firstName, String lastName, int accountNumber, double accountBalance) {

@@ -14,13 +14,11 @@ public class GUI {
     private JButton depositButton;
     private JButton withdrawButton;
     private JButton transferButton;
-    private JTextField accountNumberDeposit;
+    private JTextField accountNumber;
+    private JTextField amount;
     private JTextPane messageBox;
-    private JTextField accountNumberWithdraw;
     private JTextField accountNumberFrom;
     private JTextField accountNumberTo;
-    private JTextField depositAmount;
-    private JTextField withdrawAmount;
     private JTextField transferAmount;
     private JButton writeToCSVButton;
     private JTable accountTable;
@@ -36,12 +34,10 @@ public class GUI {
         withdrawButton.setBorder(compoundBorder);
         transferButton.setBorder(compoundBorder);
         writeToCSVButton.setBorder(compoundBorder);
-        accountNumberDeposit.setBorder(compoundBorder);
-        accountNumberWithdraw.setBorder(compoundBorder);
+        accountNumber.setBorder(compoundBorder);
+        amount.setBorder(compoundBorder);
         accountNumberFrom.setBorder(compoundBorder);
         accountNumberTo.setBorder(compoundBorder);
-        depositAmount.setBorder(compoundBorder);
-        withdrawAmount.setBorder(compoundBorder);
         transferAmount.setBorder(compoundBorder);
         messageBox.setBorder(compoundBorder);
         scrollPaneTable.setBorder(roundedBorder);
@@ -54,106 +50,127 @@ public class GUI {
     }
 
     private class HandlerClass implements ActionListener {
-        private String action;
-        private LinkedList<Account> accounts;
+        private final String action;
+        private final LinkedList<Account> accounts;
 
         public HandlerClass(String action, LinkedList<Account> accounts) {
             this.action = action;
             this.accounts = accounts;
         }
 
+        ErrorHandler error = new ErrorHandler();
+
+        public void handleFetch() {
+            String[] columnNames = {"Account ID", "First Name", "Last Name", "Balance"};
+            Object[][] data = new Object[accounts.size()][4];
+            for (int i = 0; i < accounts.size(); i++) {
+                Account account = accounts.get(i);
+                data[i][0] = account.getAccountNumber();
+                data[i][1] = account.getFirstName();
+                data[i][2] = account.getLastName();
+                data[i][3] = account.getAccountBalance();
+            }
+            accountTable.setModel(new DefaultTableModel(data, columnNames));
+            scrollPaneTable.setVisible(true);
+            messageBox.setText("Updated the account table.");
+        }
+
+        public void handleShowAll() {
+            handleFetch();
+        }
+
+        public void handleDepositWithdraw(String action) {
+            String accNum = accountNumber.getText().trim();
+            String amt = amount.getText().trim();
+
+            error.errorHandler(accNum, amt);
+
+            int accountNumber = Integer.parseInt(accNum);
+            double amount = Double.parseDouble(amt);
+
+            clearFields();
+
+            for (Account account : accounts) {
+                if (account.getAccountNumber() == accountNumber) {
+                    if (action.equals("deposit")) {
+                        if (account.deposit(amount)) {
+                            JOptionPane.showMessageDialog(null, "Deposited Rs." + amount + " to Account ID: " + accountNumber);
+                        }
+                    } else if (action.equals("withdraw")) {
+                        if (account.withdraw(amount)) {
+                            JOptionPane.showMessageDialog(null, "Withdrew Rs." + amount + " from Account ID: " + accountNumber);
+                        }
+                    }
+                    handleFetch();
+                    return;
+                }
+            }
+            JOptionPane.showMessageDialog(null, "Account ID: " + accountNumber + " not found.");
+        }
+
+        public void handleDeposit() {
+            handleDepositWithdraw("deposit");
+        }
+
+        public void handleWithdraw() {
+            handleDepositWithdraw("withdraw");
+        }
+
+        public void handleTransfer() {
+            String fromAccNum = accountNumberFrom.getText().trim();
+            String toAccNum = accountNumberTo.getText().trim();
+            String amt = transferAmount.getText().trim();
+
+            error.errorHandler(fromAccNum, toAccNum, amt);
+
+            int fromAccountNumber = Integer.parseInt(fromAccNum);
+            int toAccountNumber = Integer.parseInt(toAccNum);
+            double amount = Double.parseDouble(amt);
+
+            clearFields();
+
+            Account fromAccount = null;
+            Account toAccount = null;
+            for (Account account : accounts) {
+                if (account.getAccountNumber() == fromAccountNumber) {
+                    fromAccount = account;
+                }
+                if (account.getAccountNumber() == toAccountNumber) {
+                    toAccount = account;
+                }
+            }
+
+            error.errorHandler(fromAccount, toAccount, fromAccountNumber, toAccountNumber);
+
+            Transaction transaction = new Transaction();
+            if (transaction.transfer(fromAccount, toAccount, amount)) {
+                JOptionPane.showMessageDialog(null, "Transferred Rs." + amount + " from Account ID: " + fromAccountNumber + " to Account ID: " + toAccountNumber);
+                handleFetch();
+            }
+        }
+
+        public void handleWriteToCSV() {
+            WriteAccounts writeAccounts = new WriteAccounts("src/banking_app/CSV/Accounts.csv");
+            writeAccounts.writeToCSV(accounts);
+            messageBox.setText("Accounts written to CSV file.");
+        }
+
+        public void clearFields() {
+            accountNumber.setText("");
+            accountNumberFrom.setText("");
+            accountNumberTo.setText("");
+            amount.setText("");
+            transferAmount.setText("");
+        }
+
         @Override
         public void actionPerformed(ActionEvent e) {
             switch (action) {
-                case "showAll" -> {
-                    String[] columnNames = {"Account ID", "First Name", "Last Name", "Balance"};
-                    Object[][] data = new Object[accounts.size()][4];
-                    for (int i = 0; i < accounts.size(); i++) {
-                        Account account = accounts.get(i);
-                        data[i][0] = account.getAccountNumber();
-                        data[i][1] = account.getFirstName();
-                        data[i][2] = account.getLastName();
-                        data[i][3] = account.getAccountBalance();
-                    }
-                    accountTable.setModel(new DefaultTableModel(data, columnNames));
-                    scrollPaneTable.setVisible(true);
-                    messageBox.setText("Updated the account table.");
-                }
-                case "deposit" -> {
-                    int accountNumber = Integer.parseInt(accountNumberDeposit.getText());
-                    double amount = Double.parseDouble(depositAmount.getText());
-                    accountNumberDeposit.setText("");
-                    depositAmount.setText("");
-                    for (Account account : accounts) {
-                        if (account.getAccountNumber() == accountNumber) {
-                            if (account.deposit(amount)) {
-                                messageBox.setText("Deposited Rs." + amount + " to Account ID: " + accountNumber);
-                            } else {
-                                messageBox.setText("Invalid amount.");
-                            }
-                            return;
-                        }
-                    }
-                    messageBox.setText("Account not found.");
-                }
-                case "withdraw" -> {
-                    int accountNumber = Integer.parseInt(accountNumberWithdraw.getText());
-                    double amount = Double.parseDouble(withdrawAmount.getText());
-                    accountNumberWithdraw.setText("");
-                    withdrawAmount.setText("");
-                    for (Account account : accounts) {
-                        if (account.getAccountNumber() == accountNumber) {
-                            if (account.withdraw(amount)) {
-                                messageBox.setText("Withdrew Rs." + amount + " from Account ID: " + accountNumber);
-                            } else {
-                                messageBox.setText("Invalid amount or insufficient balance.");
-                            }
-                            return;
-                        }
-                    }
-                    messageBox.setText("Account not found.");
-                }
-                case "transfer" -> {
-                    int fromAccountNumber = Integer.parseInt(accountNumberFrom.getText());
-                    int toAccountNumber = Integer.parseInt(accountNumberTo.getText());
-                    double amount = Double.parseDouble(transferAmount.getText());
-                    accountNumberFrom.setText("");
-                    accountNumberTo.setText("");
-                    transferAmount.setText("");
-                    Account fromAccount = null;
-                    Account toAccount = null;
-                    for (Account account : accounts) {
-                        if (account.getAccountNumber() == fromAccountNumber) {
-                            fromAccount = account;
-                        }
-                        if (account.getAccountNumber() == toAccountNumber) {
-                            toAccount = account;
-                        }
-                    }
-                    if (fromAccount == null) {
-                        messageBox.setText("From account not found.");
-                        return;
-                    }
-                    if (toAccount == null) {
-                        messageBox.setText("To account not found.");
-                        return;
-                    }
-                    if (fromAccount.getAccountNumber() == toAccount.getAccountNumber()) {
-                        messageBox.setText("Cannot transfer to same account.");
-                        return;
-                    }
-                    Transaction transaction = new Transaction();
-                    if (transaction.transfer(fromAccount, toAccount, amount)) {
-                        messageBox.setText("Transferred Rs." + amount + " from Account ID: " + fromAccountNumber + " to Account ID: " + toAccountNumber);
-                    } else {
-                        messageBox.setText("Invalid amount or insufficient balance.");
-                    }
-                }
-                case "writeToCSV" -> {
-                    WriteAccounts writeAccounts = new WriteAccounts("src/banking_app/CSV/Accounts.csv");
-                    writeAccounts.writeToCSV(accounts);
-                    messageBox.setText("Accounts written to CSV file.");
-                }
+                case "showAll" -> handleShowAll();
+                case "deposit" -> handleDeposit();
+                case "withdraw" -> handleWithdraw();
+                case "transfer" -> handleTransfer();
+                case "writeToCSV" -> handleWriteToCSV();
             }
         }
     }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="banking_app.SubClasses.GUI">
-  <grid id="27dc6" binding="panel" layout-manager="GridLayoutManager" row-count="7" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="panel" layout-manager="GridLayoutManager" row-count="8" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="10" left="10" bottom="10" right="10"/>
     <constraints>
       <xy x="20" y="20" width="852" height="449"/>
@@ -14,7 +14,7 @@
     <children>
       <component id="37cb2" class="javax.swing.JButton" binding="depositButton" default-binding="true">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="40"/>
           </grid>
         </constraints>
@@ -45,7 +45,7 @@
       </component>
       <component id="17cb4" class="javax.swing.JButton" binding="withdrawButton" default-binding="true">
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="40"/>
           </grid>
         </constraints>
@@ -76,7 +76,7 @@
       </component>
       <component id="f2bb0" class="javax.swing.JButton" binding="transferButton" default-binding="true">
         <constraints>
-          <grid row="3" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="4" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="40"/>
           </grid>
         </constraints>
@@ -105,9 +105,9 @@
           <visible value="true"/>
         </properties>
       </component>
-      <component id="a3517" class="javax.swing.JTextField" binding="accountNumberDeposit">
+      <component id="a3517" class="javax.swing.JTextField" binding="accountNumber">
         <constraints>
-          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="2" column="2" row-span="2" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="100" height="40"/>
           </grid>
         </constraints>
@@ -122,42 +122,17 @@
       </component>
       <component id="5a883" class="javax.swing.JLabel">
         <constraints>
-          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font name="JetBrains Mono" size="16"/>
           <foreground color="-2039584"/>
           <text value="Acc No: "/>
-        </properties>
-      </component>
-      <component id="ad286" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <font name="JetBrains Mono" size="16"/>
-          <foreground color="-2039584"/>
-          <text value="Acc No: "/>
-        </properties>
-      </component>
-      <component id="a4dad" class="javax.swing.JTextField" binding="accountNumberWithdraw">
-        <constraints>
-          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="100" height="40"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-12566464"/>
-          <caretColor color="-1"/>
-          <focusable value="true"/>
-          <font name="JetBrains Mono" size="16" style="1"/>
-          <foreground color="-1"/>
-          <text value=""/>
         </properties>
       </component>
       <component id="f9b8d" class="javax.swing.JLabel">
         <constraints>
-          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font name="JetBrains Mono" size="16"/>
@@ -166,79 +141,6 @@
         </properties>
       </component>
       <component id="eda14" class="javax.swing.JTextField" binding="accountNumberFrom">
-        <constraints>
-          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="100" height="40"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-12566464"/>
-          <caretColor color="-1"/>
-          <focusable value="true"/>
-          <font name="JetBrains Mono" size="16" style="1"/>
-          <foreground color="-1"/>
-          <text value=""/>
-        </properties>
-      </component>
-      <component id="f498c" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <font name="JetBrains Mono" size="16"/>
-          <foreground color="-2039584"/>
-          <text value="Amount:"/>
-        </properties>
-      </component>
-      <component id="a3001" class="javax.swing.JTextField" binding="depositAmount">
-        <constraints>
-          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="100" height="40"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-12566464"/>
-          <caretColor color="-1"/>
-          <focusable value="true"/>
-          <font name="JetBrains Mono" size="16" style="1"/>
-          <foreground color="-1"/>
-        </properties>
-      </component>
-      <component id="eb3aa" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <font name="JetBrains Mono" size="16"/>
-          <foreground color="-2039584"/>
-          <text value="Amount:"/>
-        </properties>
-      </component>
-      <component id="67f7e" class="javax.swing.JTextField" binding="withdrawAmount">
-        <constraints>
-          <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="100" height="40"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-12566464"/>
-          <caretColor color="-1"/>
-          <focusable value="true"/>
-          <font name="JetBrains Mono" size="16" style="1"/>
-          <foreground color="-1"/>
-        </properties>
-      </component>
-      <component id="86b9f" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <font name="JetBrains Mono" size="16"/>
-          <foreground color="-2039584"/>
-          <text value="Acc No (to): "/>
-        </properties>
-      </component>
-      <component id="d073c" class="javax.swing.JTextField" binding="accountNumberTo">
         <constraints>
           <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="100" height="40"/>
@@ -253,9 +155,58 @@
           <text value=""/>
         </properties>
       </component>
+      <component id="f498c" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="2" column="3" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="JetBrains Mono" size="16"/>
+          <foreground color="-2039584"/>
+          <text value="Amount:"/>
+        </properties>
+      </component>
+      <component id="a3001" class="javax.swing.JTextField" binding="amount">
+        <constraints>
+          <grid row="2" column="4" row-span="2" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="100" height="40"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-12566464"/>
+          <caretColor color="-1"/>
+          <focusable value="true"/>
+          <font name="JetBrains Mono" size="16" style="1"/>
+          <foreground color="-1"/>
+        </properties>
+      </component>
+      <component id="86b9f" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="JetBrains Mono" size="16"/>
+          <foreground color="-2039584"/>
+          <text value="Acc No (to): "/>
+        </properties>
+      </component>
+      <component id="d073c" class="javax.swing.JTextField" binding="accountNumberTo">
+        <constraints>
+          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="100" height="40"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-12566464"/>
+          <caretColor color="-1"/>
+          <focusable value="true"/>
+          <font name="JetBrains Mono" size="16" style="1"/>
+          <foreground color="-1"/>
+          <text value=""/>
+        </properties>
+      </component>
       <component id="9a583" class="javax.swing.JLabel">
         <constraints>
-          <grid row="3" column="3" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="3" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font name="JetBrains Mono" size="16"/>
@@ -265,7 +216,7 @@
       </component>
       <component id="752fb" class="javax.swing.JTextField" binding="transferAmount">
         <constraints>
-          <grid row="3" column="4" row-span="2" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="4" column="4" row-span="2" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="100" height="40"/>
           </grid>
         </constraints>
@@ -279,7 +230,7 @@
       </component>
       <component id="64f35" class="javax.swing.JTextPane" binding="messageBox">
         <constraints>
-          <grid row="6" column="0" row-span="1" col-span="5" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+          <grid row="7" column="0" row-span="1" col-span="5" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="50"/>
           </grid>
         </constraints>
@@ -301,7 +252,7 @@
       </component>
       <component id="f9bb4" class="javax.swing.JButton" binding="writeToCSVButton" default-binding="true">
         <constraints>
-          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="40"/>
           </grid>
         </constraints>
@@ -364,7 +315,7 @@
       </component>
       <scrollpane id="d4c18" binding="scrollPaneTable">
         <constraints>
-          <grid row="0" column="1" row-span="1" col-span="4" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="0" row-span="1" col-span="5" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <opaque value="false"/>
