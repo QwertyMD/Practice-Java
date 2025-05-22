@@ -23,13 +23,13 @@ public class GUI {
     private JButton writeToCSVButton;
     private JTable accountTable;
     private JScrollPane scrollPaneTable;
-    
+
     public GUI(LinkedList<Account> accounts) {
         // initialize borders
         Border roundedBorder = BorderFactory.createLineBorder(new Color(255, 87, 34), 3, true);
         Border paddingBorder = BorderFactory.createEmptyBorder(3, 5, 3, 5);
         Border compoundBorder = BorderFactory.createCompoundBorder(roundedBorder, paddingBorder);
-        
+
         // set borders to GUI components
         showHideButton.setBorder(compoundBorder);
         depositButton.setBorder(compoundBorder);
@@ -61,7 +61,8 @@ public class GUI {
             this.accounts = accounts;  // set accounts
         }
 
-        ErrorHandler error = new ErrorHandler();  // create instance of ErrorHandler class
+        // Create instance of ErrorHandler class
+        ErrorHandler error = new ErrorHandler();  
 
         // method to update the table with account details
         public void handleFetch() {
@@ -72,12 +73,11 @@ public class GUI {
                 data[i][0] = account.getAccountNumber();
                 data[i][1] = account.getFirstName();
                 data[i][2] = account.getLastName();
-                data[i][3] = account.getAccountBalance();
+                data[i][3] = String.format("%.2f", account.getAccountBalance()); // Format to 2 decimal places
             }
             accountTable.setModel(new DefaultTableModel(data, columnNames));  // set table model
             scrollPaneTable.setVisible(true);
             panel.revalidate();  // revalidate panel to update layout
-            JOptionPane.showMessageDialog(null, "Accounts fetched successfully.");
         }
 
         // method to show or hide the table
@@ -87,6 +87,7 @@ public class GUI {
                 panel.revalidate();
             } else {
                 handleFetch();  // update table when shown
+                JOptionPane.showMessageDialog(null, "Accounts fetched successfully.");
             }
         }
 
