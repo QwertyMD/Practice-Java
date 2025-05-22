@@ -16,7 +16,6 @@ public class GUI {
     private JButton transferButton;
     private JTextField accountNumber;
     private JTextField amount;
-    private JTextPane messageBox;
     private JTextField accountNumberFrom;
     private JTextField accountNumberTo;
     private JTextField transferAmount;
@@ -39,7 +38,6 @@ public class GUI {
         accountNumberFrom.setBorder(compoundBorder);
         accountNumberTo.setBorder(compoundBorder);
         transferAmount.setBorder(compoundBorder);
-        messageBox.setBorder(compoundBorder);
         scrollPaneTable.setBorder(roundedBorder);
 
         showAllButton.addActionListener(new HandlerClass("showAll", accounts));
@@ -72,11 +70,17 @@ public class GUI {
             }
             accountTable.setModel(new DefaultTableModel(data, columnNames));
             scrollPaneTable.setVisible(true);
-            messageBox.setText("Updated the account table.");
+            panel.revalidate();
+            JOptionPane.showMessageDialog(null, "Accounts fetched successfully.");
         }
 
         public void handleShowAll() {
-            handleFetch();
+            if (scrollPaneTable.isVisible()) {
+                scrollPaneTable.setVisible(false);
+                panel.revalidate();
+            } else {
+                handleFetch();
+            }
         }
 
         public void handleDepositWithdraw(String action) {
@@ -152,7 +156,7 @@ public class GUI {
         public void handleWriteToCSV() {
             WriteAccounts writeAccounts = new WriteAccounts("src/banking_app/CSV/Accounts.csv");
             writeAccounts.writeToCSV(accounts);
-            messageBox.setText("Accounts written to CSV file.");
+            JOptionPane.showMessageDialog(null, "Accounts written to CSV file successfully.");
         }
 
         public void clearFields() {

@@ -14,7 +14,7 @@
     <children>
       <component id="37cb2" class="javax.swing.JButton" binding="depositButton" default-binding="true">
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="40"/>
           </grid>
         </constraints>
@@ -45,7 +45,7 @@
       </component>
       <component id="17cb4" class="javax.swing.JButton" binding="withdrawButton" default-binding="true">
         <constraints>
-          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="40"/>
           </grid>
         </constraints>
@@ -76,7 +76,7 @@
       </component>
       <component id="f2bb0" class="javax.swing.JButton" binding="transferButton" default-binding="true">
         <constraints>
-          <grid row="4" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="3" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="40"/>
           </grid>
         </constraints>
@@ -107,7 +107,7 @@
       </component>
       <component id="a3517" class="javax.swing.JTextField" binding="accountNumber">
         <constraints>
-          <grid row="2" column="2" row-span="2" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="1" column="2" row-span="2" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="100" height="40"/>
           </grid>
         </constraints>
@@ -122,7 +122,7 @@
       </component>
       <component id="5a883" class="javax.swing.JLabel">
         <constraints>
-          <grid row="2" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font name="JetBrains Mono" size="16"/>
@@ -132,7 +132,7 @@
       </component>
       <component id="f9b8d" class="javax.swing.JLabel">
         <constraints>
-          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font name="JetBrains Mono" size="16"/>
@@ -142,7 +142,7 @@
       </component>
       <component id="eda14" class="javax.swing.JTextField" binding="accountNumberFrom">
         <constraints>
-          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="100" height="40"/>
           </grid>
         </constraints>
@@ -157,7 +157,7 @@
       </component>
       <component id="f498c" class="javax.swing.JLabel">
         <constraints>
-          <grid row="2" column="3" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="3" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font name="JetBrains Mono" size="16"/>
@@ -167,7 +167,7 @@
       </component>
       <component id="a3001" class="javax.swing.JTextField" binding="amount">
         <constraints>
-          <grid row="2" column="4" row-span="2" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="1" column="4" row-span="2" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="100" height="40"/>
           </grid>
         </constraints>
@@ -181,7 +181,7 @@
       </component>
       <component id="86b9f" class="javax.swing.JLabel">
         <constraints>
-          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font name="JetBrains Mono" size="16"/>
@@ -191,7 +191,7 @@
       </component>
       <component id="d073c" class="javax.swing.JTextField" binding="accountNumberTo">
         <constraints>
-          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="100" height="40"/>
           </grid>
         </constraints>
@@ -206,7 +206,7 @@
       </component>
       <component id="9a583" class="javax.swing.JLabel">
         <constraints>
-          <grid row="4" column="3" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="3" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font name="JetBrains Mono" size="16"/>
@@ -216,7 +216,7 @@
       </component>
       <component id="752fb" class="javax.swing.JTextField" binding="transferAmount">
         <constraints>
-          <grid row="4" column="4" row-span="2" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="3" column="4" row-span="2" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="100" height="40"/>
           </grid>
         </constraints>
@@ -228,31 +228,70 @@
           <foreground color="-1"/>
         </properties>
       </component>
-      <component id="64f35" class="javax.swing.JTextPane" binding="messageBox">
+      <component id="756a" class="javax.swing.JButton" binding="showAllButton" default-binding="true">
         <constraints>
-          <grid row="7" column="0" row-span="1" col-span="5" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="50"/>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="40"/>
           </grid>
         </constraints>
         <properties>
-          <background color="-12434878"/>
-          <editable value="false"/>
+          <background color="-12500671"/>
+          <borderPainted value="true"/>
+          <contentAreaFilled value="false"/>
+          <defaultCapable value="true"/>
+          <doubleBuffered value="false"/>
           <enabled value="true"/>
+          <focusPainted value="true"/>
           <focusable value="false"/>
-          <font name="JetBrains Mono" size="20" style="2"/>
+          <font name="JetBrains Mono" size="16"/>
           <foreground color="-1"/>
-          <margin top="3" left="3" bottom="3" right="3"/>
+          <hideActionText value="false"/>
+          <horizontalAlignment value="2"/>
+          <horizontalTextPosition value="11"/>
+          <icon value="banking_app/Icons/eye.png"/>
+          <iconTextGap value="10"/>
+          <inheritsPopupMenu value="false"/>
           <opaque value="true"/>
           <requestFocusEnabled value="true"/>
+          <rolloverEnabled value="true"/>
+          <selected value="false"/>
+          <text value="Show / Hide"/>
+          <verifyInputWhenFocusTarget value="true"/>
           <visible value="true"/>
         </properties>
-        <clientProperties>
-          <html.disable class="java.lang.Boolean" value="false"/>
-        </clientProperties>
       </component>
+      <scrollpane id="d4c18" binding="scrollPaneTable">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="5" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <opaque value="false"/>
+          <visible value="false"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="b02f8" class="javax.swing.JTable" binding="accountTable">
+            <constraints/>
+            <properties>
+              <autoCreateColumnsFromModel value="true"/>
+              <autoCreateRowSorter value="true"/>
+              <background color="-12434878"/>
+              <enabled value="false"/>
+              <focusable value="false"/>
+              <font name="JetBrains Mono" size="20"/>
+              <foreground color="-1"/>
+              <intercellSpacing width="10" height="0"/>
+              <opaque value="true"/>
+              <rowHeight value="40"/>
+              <rowMargin value="0"/>
+              <rowSelectionAllowed value="false"/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
       <component id="f9bb4" class="javax.swing.JButton" binding="writeToCSVButton" default-binding="true">
         <constraints>
-          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="40"/>
           </grid>
         </constraints>
@@ -281,67 +320,24 @@
           <visible value="true"/>
         </properties>
       </component>
-      <component id="756a" class="javax.swing.JButton" binding="showAllButton" default-binding="true">
+      <vspacer id="9a5b5">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="40"/>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <component id="3f8f1" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="-1" height="75"/>
           </grid>
         </constraints>
         <properties>
-          <background color="-12500671"/>
-          <borderPainted value="true"/>
-          <contentAreaFilled value="false"/>
-          <defaultCapable value="true"/>
-          <doubleBuffered value="false"/>
-          <enabled value="true"/>
-          <focusPainted value="true"/>
-          <focusable value="false"/>
-          <font name="JetBrains Mono" size="16"/>
+          <font name="JetBrains Mono" size="36"/>
           <foreground color="-1"/>
-          <hideActionText value="false"/>
-          <horizontalAlignment value="2"/>
-          <horizontalTextPosition value="11"/>
-          <icon value="banking_app/Icons/eye.png"/>
-          <iconTextGap value="10"/>
-          <inheritsPopupMenu value="false"/>
-          <opaque value="true"/>
-          <requestFocusEnabled value="true"/>
-          <rolloverEnabled value="true"/>
-          <selected value="false"/>
-          <text value="Show All/Refresh"/>
-          <verifyInputWhenFocusTarget value="true"/>
-          <visible value="true"/>
+          <text value="Banking Application"/>
+          <verticalAlignment value="1"/>
         </properties>
       </component>
-      <scrollpane id="d4c18" binding="scrollPaneTable">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="5" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <opaque value="false"/>
-          <visible value="false"/>
-        </properties>
-        <border type="none"/>
-        <children>
-          <component id="b02f8" class="javax.swing.JTable" binding="accountTable">
-            <constraints/>
-            <properties>
-              <autoCreateColumnsFromModel value="true"/>
-              <autoCreateRowSorter value="true"/>
-              <background color="-12434878"/>
-              <enabled value="false"/>
-              <focusable value="false"/>
-              <font name="JetBrains Mono" size="20"/>
-              <foreground color="-1"/>
-              <intercellSpacing width="10" height="0"/>
-              <opaque value="true"/>
-              <rowHeight value="40"/>
-              <rowMargin value="0"/>
-              <rowSelectionAllowed value="false"/>
-            </properties>
-          </component>
-        </children>
-      </scrollpane>
     </children>
   </grid>
 </form>
