@@ -13,7 +13,7 @@ public class ErrorHandler {
             JOptionPane.showMessageDialog(null, "Amount Field is Empty");
         } else if (Integer.parseInt(accNum) < 0) {
             JOptionPane.showMessageDialog(null, "Invalid Account Number");
-        } else if (Integer.parseInt(amt) < 0) {
+        } else if (Double.parseDouble(amt) < 0) {
             JOptionPane.showMessageDialog(null, "Invalid Amount or Insufficient Balance");
         }
     }
@@ -30,7 +30,7 @@ public class ErrorHandler {
             JOptionPane.showMessageDialog(null, "Amount Field is Empty");
         } else if (Integer.parseInt(fromAccountNumber) < 0 || Integer.parseInt(toAccountNumber) < 0) {
             JOptionPane.showMessageDialog(null, "Invalid Account Number");
-        } else if (Integer.parseInt(amount) < 0) {
+        } else if (Double.parseDouble(amount) < 0) {
             JOptionPane.showMessageDialog(null, "Invalid Amount or Insufficient Balance");
         } else if (fromAccountNumber.equals(toAccountNumber)) {
             JOptionPane.showMessageDialog(null, "Cannot transfer to same account");
